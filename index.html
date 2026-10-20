@@ -53,15 +53,25 @@ ONLINE EDITING:
 5. Add/update rows in the sheet; this site will fetch the latest public CSV when loaded.
 */
 const SHEET_CSV_URL = ""; // Paste your published Google Sheets CSV URL here after creating the sheet.
+
 const starterEvents = [
  {department:"Core Event",event_name:"ChronoQuest: The Awakening",description:"An Egyptian mythology-inspired escape room connected to Amun-Ra, the Keeper of Time. Follow a missing explorer’s journal, uncover ancient secrets and solve interconnected puzzles before time runs out. Features AI-assisted interaction, computer vision, gesture-controlled musical puzzles, light-and-mirror challenges, software-driven progression and immersive audiovisual effects.",registration_url:"https://docs.google.com/forms/d/e/1FAIpQLScYOJs0LftRpTwrG1A-PCwDzdxWXk1fVosOImWf83dpxh5rUQ/viewform",details_url:"",status:"published"},
+
  {department:"CSE",event_name:"The Jade Protocol",description:"An immersive time-travel experience where an ancient Chinese jade pendant connects the past with a futuristic world. Through VR, interactive challenges and futuristic technology, players explore different eras and uncover the pendant’s secrets.",registration_url:"",details_url:"",status:"published"},
- {department:"ISM",event_name:"The Walking Dead",description:"A five-player zombie-apocalypse escape room where teams work together to find a hidden cure by solving five connected puzzles. Each player faces a different sensory or communication challenge, making teamwork, observation and quick thinking essential.",registration_url:"",details_url:"",status:"published"},
- {department:"Civil",event_name:"CIVITAS 2026 — Build • Measure • Sustain",description:"A civil engineering technical fest featuring a bridge-making and stability challenge, an interactive carbon-footprint game, a line-of-sight treasure hunt using levelling instruments, plus relevant posters and exhibits.",registration_url:"",details_url:"",status:"published"},
+
  {department:"Mechanical",event_name:"HYDROJET",description:"It is an exciting water rocket competition where creativity meets hands-on engineering. Gather your team, build your custom rocket, and test your skills as you compete in design, distance, and accuracy!",registration_url:"https://forms.cloud.microsoft/pages/responsepage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAAQbsUehUMjhTSTg5SjM0UExIRzkzMVA4MVRRUzQyRy4u&origin=QRCode&route=shorturl",details_url:"",status:"published"},
+
  {department:"DSE",event_name:"Stranger Things",description:"An interactive event where teams of 3–4 participants take on three to four levels of challenges with increasing complexity, testing teamwork and quick thinking.",registration_url:"",details_url:"",status:"published"},
- {department:"Mechatronics",event_name:"Blindbots",description:"A five-stage robotics challenge testing teamwork, coordination and problem-solving. One player controls the bot while blindfolded, while a teammate who cannot hear assists with navigation. Complete five tasks to progress: Colour Sequence, Object Relocation, Parking, Maze and a final challenge to be announced.",registration_url:"",details_url:"",status:"published"}
+
+ {department:"Mechatronics",event_name:"Blindbots",description:"A five-stage robotics challenge testing teamwork, coordination and problem-solving. One player controls the bot while blindfolded, while a teammate who cannot hear assists with navigation. Complete five tasks to progress: Colour Sequence, Object Relocation, Parking, Maze and a final challenge to be announced.",registration_url:"",details_url:"",status:"published"},
+
+ {department:"ISM",event_name:"The Walking Dead",description:"A five-player zombie-apocalypse escape room where teams work together to find a hidden cure by solving five connected puzzles. Each player faces a different sensory or communication challenge, making teamwork, observation and quick thinking essential.",registration_url:"",details_url:"",status:"published"},
+
+ {department:"Civil",event_name:"CIVITAS 2026 — Build • Measure • Sustain",description:"A civil engineering technical fest featuring a bridge-making and stability challenge, an interactive carbon-footprint game, a line-of-sight treasure hunt using levelling instruments, plus relevant posters and exhibits.",registration_url:"",details_url:"",status:"published"},
+
+ {department:"EEE",event_name:"Grid 404",description:"Two teams, A series of logical and technical puzzles, one winning move\n\nSolve the challenges, collect hidden clues, and piece together the fragments of a bigger picture. Race against your friends, decode the mystery, and uncover the move that brings it all to an end.\n\nNow you have the pieces what’s your final move?",registration_url:"",details_url:"",status:"published"}
 ];
+
 let events = starterEvents;
 function parseCSV(text){
  const rows=[]; let row=[], field="", quoted=false;
